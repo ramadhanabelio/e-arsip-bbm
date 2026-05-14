@@ -1,0 +1,75 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use App\Models\Pengadaan;
+use Illuminate\Http\Request;
+
+class PengadaanController extends Controller
+{
+    public function index()
+    {
+        $data = Pengadaan::latest()->get();
+
+        return view('pengadaan.index', compact('data'));
+    }
+
+    public function create()
+    {
+        return view('pengadaan.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'nama_pekerjaan' => 'required',
+            'nama_penyedia' => 'required',
+            'pic' => 'required',
+            'nilai_pengadaan' => 'required|numeric',
+            'jangka_waktu_pekerjaan' => 'required',
+            'status' => 'required'
+        ]);
+
+        Pengadaan::create($request->all());
+
+        return redirect()
+            ->route('pengadaan.index')
+            ->with('success', 'Data pengadaan berhasil ditambahkan');
+    }
+
+    public function show(Pengadaan $pengadaan)
+    {
+        return view('pengadaan.show', compact('pengadaan'));
+    }
+
+    public function edit(Pengadaan $pengadaan)
+    {
+        return view('pengadaan.edit', compact('pengadaan'));
+    }
+
+    public function update(Request $request, Pengadaan $pengadaan)
+    {
+        $request->validate([
+            'nama_pekerjaan' => 'required',
+            'nama_penyedia' => 'required',
+            'pic' => 'required',
+            'nilai_pengadaan' => 'required|numeric',
+            'jangka_waktu_pekerjaan' => 'required',
+            'status' => 'required'
+        ]);
+
+        $pengadaan->update($request->all());
+
+        return redirect()
+            ->route('pengadaan.index')
+            ->with('success', 'Data pengadaan berhasil diupdate');
+    }
+
+    public function destroy(Pengadaan $pengadaan)
+    {
+        $pengadaan->delete();
+
+        return back()->with('success', 'Data berhasil dihapus');
+    }
+}

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Database\Seeders\DivisiSeeder;
 use Database\Seeders\KendaraanDivisiSeeder;
 use Database\Seeders\KendaraanSeeder;
+use Database\Seeders\PengadaanSeeder;
 use Database\Seeders\UserSeeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,6 +24,7 @@ class DatabaseSeeder extends Seeder
             DivisiSeeder::class,
             KendaraanSeeder::class,
             KendaraanDivisiSeeder::class,
+            PengadaanSeeder::class,
         ]);
     }
 }

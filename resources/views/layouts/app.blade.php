@@ -85,6 +85,12 @@
                             <span class="pc-mtext">Transaksi BBM</span>
                         </a>
                     </li>
+                    <li class="pc-item">
+                        <a href="{{ route('pengadaan.index') }}" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-clipboard-list"></i></span>
+                            <span class="pc-mtext">Register Pekerjaan</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -111,8 +117,9 @@
             <div class="ms-auto">
                 <ul class="list-unstyled">
                     <li class="dropdown pc-h-item header-user-profile">
-                        <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#"
-                            role="button" aria-haspopup="false" data-bs-auto-close="outside" aria-expanded="false">
+                        <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown"
+                            href="#" role="button" aria-haspopup="false" data-bs-auto-close="outside"
+                            aria-expanded="false">
                             <img src="{{ asset('images/user/avatar-2.jpg') }}" alt="user-image" class="user-avtar">
                             <span>{{ Auth::user()->name ?? 'Anonymous' }}</span>
                         </a>
@@ -225,7 +232,8 @@
                 </div>
                 <div class="col-auto my-1">
                     <ul class="list-inline footer-link mb-0">
-                        <li class="list-inline-item"><a href="">Famela Okta Vianda</a></li>
+                        <li class="list-inline-item"><a href="">Copyright © 2026 <a href="#"
+                                    class="text-warning fw-bold">Famela Okta Vianda</a></li>
                     </ul>
                 </div>
             </div>

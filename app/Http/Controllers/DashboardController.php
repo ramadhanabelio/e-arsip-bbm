@@ -48,6 +48,38 @@ class DashboardController extends Controller
             $literTotal[] = $d->total;
         }
 
+        $perTahun = TransaksiBBM::select(
+            DB::raw('YEAR(tanggal) as tahun'),
+            DB::raw('SUM(total) as total')
+        )
+            ->groupBy('tahun')
+            ->orderBy('tahun')
+            ->get();
+
+        $tahunLabels = [];
+        $tahunTotal = [];
+
+        foreach ($perTahun as $d) {
+            $tahunLabels[] = $d->tahun;
+            $tahunTotal[] = $d->total;
+        }
+
+        $literTahun = TransaksiBBM::select(
+            DB::raw('YEAR(tanggal) as tahun'),
+            DB::raw('SUM(jumlah_liter) as total')
+        )
+            ->groupBy('tahun')
+            ->orderBy('tahun')
+            ->get();
+
+        $literTahunLabels = [];
+        $literTahunTotal = [];
+
+        foreach ($literTahun as $d) {
+            $literTahunLabels[] = $d->tahun;
+            $literTahunTotal[] = $d->total;
+        }
+
         $kendaraan = TransaksiBBM::join('kendaraans', 'kendaraans.id', '=', 'transaksi_bbm.kendaraan_id')
             ->select('kendaraans.no_polisi', DB::raw('SUM(transaksi_bbm.total) as total'))
             ->groupBy('kendaraans.no_polisi')
@@ -76,6 +108,10 @@ class DashboardController extends Controller
             'bulanTotal',
             'literLabels',
             'literTotal',
+            'tahunLabels',
+            'tahunTotal',
+            'literTahunLabels',
+            'literTahunTotal',
             'kendaraanLabel',
             'kendaraanTotal',
             'divisiLabel',

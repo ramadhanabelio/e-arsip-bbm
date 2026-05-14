@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DivisiController;
 use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\PengadaanController;
 use App\Http\Controllers\TransaksiBBMController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,4 @@ Route::resource('kendaraan', KendaraanController::class);
 Route::resource('divisi', DivisiController::class);
 Route::get('/transaksi/pdf', [TransaksiBBMController::class, 'exportPdf'])->name('transaksi.pdf');
 Route::resource('transaksi', TransaksiBBMController::class);
+Route::resource('pengadaan', PengadaanController::class);

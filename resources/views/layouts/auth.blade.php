@@ -49,7 +49,7 @@
                 <div class="auth-footer row">
                     <!-- <div class=""> -->
                     <div class="col my-1">
-                        <p class="m-0">Copyright © <a href="#" class="text-warning fw-bold">Famela Okta
+                        <p class="m-0">Copyright © 2026 <a href="#" class="text-warning fw-bold">Famela Okta
                                 Vianda</a>
                         </p>
                     </div>

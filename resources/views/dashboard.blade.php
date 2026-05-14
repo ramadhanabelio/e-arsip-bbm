@@ -42,7 +42,7 @@
     <div class="row">
 
         <div class="col-md-6 mb-3">
-            <div class="card">
+            <div class="card shadow-sm">
                 <div class="card-body">
                     <h6>Pengeluaran per Bulan</h6>
                     <canvas id="chartBulanan"></canvas>
@@ -51,7 +51,7 @@
         </div>
 
         <div class="col-md-6 mb-3">
-            <div class="card">
+            <div class="card shadow-sm">
                 <div class="card-body">
                     <h6>Liter BBM per Bulan</h6>
                     <canvas id="chartLiter"></canvas>
@@ -59,8 +59,26 @@
             </div>
         </div>
 
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h6>Pengeluaran per Tahun</h6>
+                    <canvas id="chartTahun"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h6>Liter BBM per Tahun</h6>
+                    <canvas id="chartLiterTahun"></canvas>
+                </div>
+            </div>
+        </div>
+
         <div class="col-md-6 mb-3">
-            <div class="card">
+            <div class="card shadow-sm">
                 <div class="card-body">
                     <h6>Pengeluaran per Kendaraan</h6>
                     <canvas id="chartKendaraan"></canvas>
@@ -69,7 +87,7 @@
         </div>
 
         <div class="col-md-6 mb-3">
-            <div class="card">
+            <div class="card shadow-sm">
                 <div class="card-body">
                     <h6>Pengeluaran per Divisi</h6>
                     <canvas id="chartDivisi"></canvas>
@@ -82,7 +100,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-        // Bulanan
+        // Pengeluaran per Bulan
         new Chart(document.getElementById('chartBulanan'), {
             type: 'bar',
             data: {
@@ -94,7 +112,7 @@
             }
         });
 
-        // Liter
+        // Liter per Bulan
         new Chart(document.getElementById('chartLiter'), {
             type: 'line',
             data: {
@@ -102,6 +120,32 @@
                 datasets: [{
                     label: 'Liter',
                     data: @json($literTotal)
+                }]
+            }
+        });
+
+        //  Pengeluaran per Tahun
+        new Chart(document.getElementById('chartTahun'), {
+            type: 'bar',
+            data: {
+                labels: @json($tahunLabels),
+                datasets: [{
+                    label: 'Pengeluaran',
+                    data: @json($tahunTotal),
+                    borderWidth: 1
+                }]
+            }
+        });
+
+        // Liter per Tahun
+        new Chart(document.getElementById('chartLiterTahun'), {
+            type: 'line',
+            data: {
+                labels: @json($literTahunLabels),
+                datasets: [{
+                    label: 'Liter BBM',
+                    data: @json($literTahunTotal),
+                    borderWidth: 2
                 }]
             }
         });
