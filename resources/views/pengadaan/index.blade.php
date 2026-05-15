@@ -4,14 +4,25 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-body">
-                <div class="container text-end">
-                    <a href="{{ route('pengadaan.create') }}" class="btn btn-primary mb-3">+ Register Pekerjaan Baru</a>
+
+                <div class="d-flex justify-content-between mb-3">
+                    <h4 class="fw-semibold">Register Pekerjaan</h4>
+
+                    <div>
+                        <a href="{{ route('pengadaan.create') }}" class="btn btn-primary">
+                            + Register Pekerjaan Baru
+                        </a>
+                        <a href="{{ route('pengadaan.pdf') }}" class="btn btn-danger">
+                            Export PDF
+                        </a>
+                        <a href="{{ route('pengadaan.excel') }}" class="btn btn-success">
+                            Export Excel
+                        </a>
+                    </div>
                 </div>
 
                 @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
+                    <div class="alert alert-success">{{ session('success') }}</div>
                 @endif
 
                 <div class="table-responsive">
