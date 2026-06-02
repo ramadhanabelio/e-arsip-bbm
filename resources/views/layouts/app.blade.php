@@ -57,7 +57,9 @@
 
                     <li class="pc-item">
                         <a href="{{ route('dashboard') }}" class="pc-link">
-                            <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
+                            <span class="pc-micon">
+                                <i class="ti ti-dashboard"></i>
+                            </span>
                             <span class="pc-mtext">Dashboard</span>
                         </a>
                     </li>
@@ -67,30 +69,57 @@
                         <i class="ti ti-list"></i>
                     </li>
 
-                    <li class="pc-item">
-                        <a href="{{ route('kendaraan.index') }}" class="pc-link">
-                            <span class="pc-micon"><i class="ti ti-truck-delivery"></i></span>
-                            <span class="pc-mtext">Kelola Kendaraan</span>
-                        </a>
-                    </li>
-                    <li class="pc-item">
-                        <a href="{{ route('divisi.index') }}" class="pc-link">
-                            <span class="pc-micon"><i class="ti ti-line"></i></span>
-                            <span class="pc-mtext">Kelola Divisi</span>
-                        </a>
-                    </li>
-                    <li class="pc-item">
-                        <a href="{{ route('transaksi.index') }}" class="pc-link">
-                            <span class="pc-micon"><i class="ti ti-file-text"></i></span>
-                            <span class="pc-mtext">Transaksi BBM</span>
-                        </a>
-                    </li>
-                    <li class="pc-item">
-                        <a href="{{ route('pengadaan.index') }}" class="pc-link">
-                            <span class="pc-micon"><i class="ti ti-clipboard-list"></i></span>
-                            <span class="pc-mtext">Register Pekerjaan</span>
-                        </a>
-                    </li>
+                    {{-- Menu Umum --}}
+                    @if ($role == 'umum')
+                        <li class="pc-item">
+                            <a href="{{ route('kendaraan.index') }}" class="pc-link">
+                                <span class="pc-micon">
+                                    <i class="ti ti-truck"></i>
+                                </span>
+                                <span class="pc-mtext">Kelola Kendaraan</span>
+                            </a>
+                        </li>
+
+                        <li class="pc-item">
+                            <a href="{{ route('divisi.index') }}" class="pc-link">
+                                <span class="pc-micon">
+                                    <i class="ti ti-building"></i>
+                                </span>
+                                <span class="pc-mtext">Kelola Divisi</span>
+                            </a>
+                        </li>
+
+                        <li class="pc-item">
+                            <a href="{{ route('transaksi.index') }}" class="pc-link">
+                                <span class="pc-micon">
+                                    <i class="ti ti-gas-station"></i>
+                                </span>
+                                <span class="pc-mtext">Transaksi BBM</span>
+                            </a>
+                        </li>
+                    @endif
+
+                    {{-- Menu Pengadaan --}}
+                    @if ($role == 'pengadaan')
+                        <li class="pc-item">
+                            <a href="{{ route('pengadaan.index') }}" class="pc-link">
+                                <span class="pc-micon">
+                                    <i class="ti ti-clipboard-list"></i>
+                                </span>
+                                <span class="pc-mtext">Register Pekerjaan</span>
+                            </a>
+                        </li>
+
+                        <li class="pc-item">
+                            <a href="{{ route('lisensi.index') }}" class="pc-link">
+                                <span class="pc-micon">
+                                    <i class="ti ti-key"></i>
+                                </span>
+                                <span class="pc-mtext">Lisensi Aplikasi</span>
+                            </a>
+                        </li>
+                    @endif
+
                 </ul>
             </div>
         </div>

@@ -30,14 +30,14 @@
                         <div class="row mb-2">
                             <div class="col-md-4 fw-semibold">Nilai Pengadaan</div>
                             <div class="col-md-8">
-                                : Rp {{ number_format($pengadaan->nilai_pengadaan) }}
+                                : Rp. {{ number_format($pengadaan->nilai_pengadaan) }}
                             </div>
                         </div>
 
                         <div class="row mb-2">
                             <div class="col-md-4 fw-semibold">Biaya Anggaran</div>
                             <div class="col-md-8">
-                                : Rp {{ number_format($pengadaan->biaya_anggaran) }}
+                                : {{ $pengadaan->biaya_anggaran ?? '-' }}
                             </div>
                         </div>
 

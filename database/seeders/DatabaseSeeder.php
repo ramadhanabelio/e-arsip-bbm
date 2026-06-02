@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             KendaraanSeeder::class,
             KendaraanDivisiSeeder::class,
             PengadaanSeeder::class,
+            LisensiSeeder::class,
         ]);
     }
 }

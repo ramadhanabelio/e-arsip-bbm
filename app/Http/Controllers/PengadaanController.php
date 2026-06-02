@@ -8,6 +8,9 @@ use App\Exports\PengadaanExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Pengadaan;
 use Illuminate\Http\Request;
+use App\Mail\PengadaanNotification;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 
 class PengadaanController extends Controller
 {
@@ -34,7 +37,13 @@ class PengadaanController extends Controller
             'status' => 'required'
         ]);
 
-        Pengadaan::create($request->all());
+        $pengadaan = Pengadaan::create($request->all());
+
+        Mail::to(Auth::user()->email)
+            ->send(new PengadaanNotification(
+                $pengadaan,
+                'ditambahkan'
+            ));
 
         return redirect()
             ->route('pengadaan.index')
@@ -63,6 +72,12 @@ class PengadaanController extends Controller
         ]);
 
         $pengadaan->update($request->all());
+
+        Mail::to(Auth::user()->email)
+            ->send(new PengadaanNotification(
+                $pengadaan,
+                'diupdate'
+            ));
 
         return redirect()
             ->route('pengadaan.index')
