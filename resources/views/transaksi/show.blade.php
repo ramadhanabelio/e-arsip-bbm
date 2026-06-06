@@ -50,7 +50,7 @@
                     </div>
                 </div>
 
-                <div class="card border-0 shadow-sm mb-4">
+                {{-- <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body">
                         <h5 class="fw-bold mb-3">Data Nota</h5>
 
@@ -69,7 +69,7 @@
                             <p class="text-muted">Tidak ada foto nota</p>
                         @endif
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body">

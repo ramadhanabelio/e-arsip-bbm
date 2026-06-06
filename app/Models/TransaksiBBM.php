@@ -29,10 +29,10 @@ class TransaksiBBM extends Model
         return $this->belongsTo(Kendaraan::class);
     }
 
-    protected static function booted()
-    {
-        static::saving(function ($model) {
-            $model->total = $model->jumlah_liter * $model->harga_per_liter;
-        });
-    }
+    // protected static function booted()
+    // {
+    //     static::saving(function ($model) {
+    //         $model->total = $model->jumlah_liter * $model->harga_per_liter;
+    //     });
+    // }
 }

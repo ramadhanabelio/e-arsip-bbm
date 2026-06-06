@@ -36,6 +36,7 @@ class TransaksiBBMController extends Controller
             'kendaraan_id' => 'required',
             'jumlah_liter' => 'required|numeric',
             'harga_per_liter' => 'required|numeric',
+            'total' => 'required|numeric',
             'jenis_bbm' => 'required',
             'foto_nota' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
