@@ -28,6 +28,12 @@
     <!-- [Template CSS Files] -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" id="main-style-link">
     <link rel="stylesheet" href="{{ asset('css/style-preset.css') }}">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e52d27 0%, #b31217 100%) !important;
+            min-height: 100vh;
+        }
+    </style>
 </head>
 <!-- [Head] end -->
 <!-- [Body] Start -->
