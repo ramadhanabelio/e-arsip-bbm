@@ -8,10 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-        content="Aplikasi Penjualan Udang Pepai Berbasis Web Dengan Keamanan Hash Password Menggunakan Algoritma Bcrypt">
-    <meta name="keywords" content="Bcrypt, Udang Pepai, Penjualan Online, Desa Prapat Tunggal">
-    <meta name="author" content="Aryan Saputra">
+    <meta name="description" content="Arsip BBM Bank Riau Syariah">
+    <meta name="keywords" content="E-Arsip, BBM, Pengadaan, Bank Riau Syariah">
     <!-- [Favicon] icon -->
     <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
     <!-- data tables css -->
@@ -56,11 +54,16 @@
                 <ul class="pc-navbar">
 
                     <li class="pc-item">
-                        <a href="{{ route('dashboard') }}" class="pc-link">
+                        <a href="{{ auth()->user()->username == 'pengadaan' ? route('home') : route('dashboard') }}"
+                            class="pc-link">
+
                             <span class="pc-micon">
                                 <i class="ti ti-dashboard"></i>
                             </span>
-                            <span class="pc-mtext">Dashboard</span>
+
+                            <span class="pc-mtext">
+                                Dashboard
+                            </span>
                         </a>
                     </li>
 

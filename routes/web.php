@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DivisiController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\LisensiController;
 use App\Http\Controllers\PengadaanController;
@@ -17,6 +18,9 @@ Route::get('/', [AuthController::class, 'index'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.process');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/home', [HomeController::class, 'index'])
+    ->name('home')
+    ->middleware('auth');
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->name('dashboard')
     ->middleware('auth');
