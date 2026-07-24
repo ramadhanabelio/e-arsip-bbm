@@ -8,10 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-        content="Aplikasi Penjualan Udang Pepai Berbasis Web Dengan Keamanan Hash Password Menggunakan Algoritma Bcrypt">
-    <meta name="keywords" content="Bcrypt, Udang Pepai, Penjualan Online, Desa Prapat Tunggal">
-    <meta name="author" content="Aryan Saputra">
+    <meta name="description" content="Arsip BBM Bank Riau Syariah">
+    <meta name="keywords" content="E-Arsip, BBM, Pengadaan, Bank Riau Syariah">
     <!-- [Favicon] icon -->
     <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/x-icon"> <!-- [Google Font] Family -->
     <link rel="stylesheet"
@@ -28,6 +26,12 @@
     <!-- [Template CSS Files] -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" id="main-style-link">
     <link rel="stylesheet" href="{{ asset('css/style-preset.css') }}">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e52d27 0%, #b31217 100%) !important;
+            min-height: 100vh;
+        }
+    </style>
 </head>
 <!-- [Head] end -->
 <!-- [Body] Start -->
@@ -48,11 +52,11 @@
                 @yield('content')
                 <div class="auth-footer row">
                     <!-- <div class=""> -->
-                    <div class="col my-1">
+                    {{-- <div class="col my-1">
                         <p class="m-0">Copyright © 2026 <a href="#" class="text-warning fw-bold">Famela Okta
                                 Vianda</a>
                         </p>
-                    </div>
+                    </div> --}}
                     <!-- </div> -->
                 </div>
             </div>

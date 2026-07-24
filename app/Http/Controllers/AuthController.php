@@ -20,10 +20,22 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        $loginType = filter_var($request->login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        $loginType = filter_var($request->login, FILTER_VALIDATE_EMAIL)
+            ? 'email'
+            : 'username';
 
-        if (Auth::attempt([$loginType => $request->login, 'password' => $request->password])) {
-            return redirect()->route('dashboard')->with('success', 'Login berhasil');
+        if (Auth::attempt([
+            $loginType => $request->login,
+            'password' => $request->password
+        ])) {
+
+            $request->session()->regenerate();
+
+            if (Auth::user()->username == 'pengadaan') {
+                return redirect()->route('home');
+            }
+
+            return redirect()->route('dashboard');
         }
 
         return back()->with('error', 'Login gagal, cek kembali data');
