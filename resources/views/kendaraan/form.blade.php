@@ -20,8 +20,10 @@
     <select name="jenis" class="form-select">
         <option value="">Pilih</option>
         <option value="Solar" {{ old('jenis', $kendaraan->jenis ?? '') == 'Solar' ? 'selected' : '' }}>Solar</option>
-        <option value="Bensin" {{ old('jenis', $kendaraan->jenis ?? '') == 'Bensin' ? 'selected' : '' }}>Bensin
-        </option>
+        <option value="Pertalite" {{ old('jenis', $kendaraan->jenis ?? '') == 'Pertalite' ? 'selected' : '' }}>Pertalite</option>
+        <option value="Pertamax" {{ old('jenis', $kendaraan->jenis ?? '') == 'Pertamax' ? 'selected' : '' }}>Pertamax</option>
+        <option value="Pertamax Turbo" {{ old('jenis', $kendaraan->jenis ?? '') == 'Pertamax Turbo' ? 'selected' : '' }}>Pertamax Turbo</option>
+        <option value="Dexlite" {{ old('jenis', $kendaraan->jenis ?? '') == 'Dexlite' ? 'selected' : '' }}>Dexlite</option>
     </select>
 </div>
 
